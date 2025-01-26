@@ -1,15 +1,13 @@
 #import "Basic";
 #import "File_Utilities";
 
-Logical :: bool;
-
 ListFilesSettings :: struct {}
 
 main :: () {
 	settings := ListFilesSettings.{};
 	
 	current_directory := get_working_directory();
-
+	
 	log("==========================================");
 	visitor :: (info: *File_Visit_Info, settings: ListFilesSettings) {
 		if info.had_error return;
